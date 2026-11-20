@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Учитель - Дашборд</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" id="dashboard">
+    <h1>Панель Учителя</h1>
+    
+    <!-- Панель загрузки файла -->
+    <div class="panel upload-panel">
+      <h3>📂 Загрузить вопросы из файла</h3>
+      <p style="font-size: 14px; margin-bottom: 10px;">Выберите ваш .json файл с готовыми заданиями:</p>
+      <input type="file" id="file-upload" accept=".json" style="background: white; width: 100%;">
+    </div>
+
+    <!-- Панель генерации ИИ -->
+    <div class="panel">
+      <h3>✨ AI Ассистент</h3>
+      <input type="text" id="ai-topic" placeholder="Тема (например: Древний Египет)">
+      <button id="btn-generate-ai">Сгенерировать вопросы</button>
+      <p id="ai-status" class="hidden">Генерация нейросетью...</p>
+    </div>
+
+    <div id="questions-list">
+      <h3>Текущие вопросы:</h3>
+      <ul id="q-list"></ul>
+    </div>
+
+    <button id="btn-create-room">Создать комнату (Запустить)</button>
+  </div>
+
+  <div class="container hidden" id="game-lobby">
+    <h2>ПИН-код комнаты: <span id="pin-display"></span></h2>
+    <p>Сообщите этот код ученикам.</p>
+    <ul id="students-list"></ul>
+    <button id="btn-start-game">Начать викторину</button>
+  </div>
+
+  <div class="container hidden" id="game-active">
+    <h2 id="active-question-text">Вопрос...</h2>
+    <p>Ответили: <span id="answers-count">0</span> / <span id="total-students">0</span></p>
+    <button id="btn-next-question">Следующий вопрос / Завершить</button>
+  </div>
+
+  <script src="teacher.js"></script>
+</body>
+</html>

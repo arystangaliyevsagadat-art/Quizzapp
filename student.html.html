@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ученик - Викторина</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" id="login-screen">
+    <h1>Присоединиться</h1>
+    <input type="text" id="join-pin" placeholder="ПИН-код игры">
+    <input type="text" id="join-name" placeholder="Ваше имя">
+    <button id="btn-join">Войти</button>
+  </div>
+
+  <div class="container hidden" id="waiting-screen">
+    <h2>Вы в игре!</h2>
+    <p>Смотрите на экран учителя. Скоро начнется.</p>
+  </div>
+
+  <div class="container hidden" id="question-screen">
+    <h2 id="student-q-text">Вопрос</h2>
+    <div id="options-container"></div>
+    <p id="feedback-msg" style="margin-top:20px; font-weight:bold;"></p>
+  </div>
+  
+  <div class="container hidden" id="result-screen">
+    <h2>Конец игры!</h2>
+    <p>Ваши результаты записаны у учителя.</p>
+  </div>
+
+  <script src="student.js"></script>
+</body>
+</html>
